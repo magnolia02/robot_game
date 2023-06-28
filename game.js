@@ -1,5 +1,5 @@
 // Background image
-function preload() {
+function preload() { //deze bestanden worden vooraf geladen
   img = loadImage("images/stars.jpg");
   gameOverSound = loadSound("sound/gameoversoundeffect.mp3");
 }
@@ -7,12 +7,12 @@ function preload() {
 // Create the canvas and set the background to the loaded image
 function setup() {
   createCanvas(800, 600);
-  image(img, 0, 0);
+  image(img, 0, 0); // Plaats de geladen afbeelding als achtergrond op positie (0, 0)
 }
 
 // Define the Robot class with a custom constructor and default constructor, and a draw function to create the robot
 class Robot {
-  constructor(x, y, img, size, color) {
+  constructor(x, y, img, size, color) { 
     this.x = x;
     this.y = y;
     this.img = img;
@@ -20,7 +20,7 @@ class Robot {
     this.color = color;
   }
 
-  init() {
+  init() { // Definieer de init-functie om de eigenschappen van de robot op nul of de standaardwaarden in te stellen
     this.x = 0;
     this.y = 0;
     this.img = null;
@@ -33,11 +33,11 @@ class Robot {
     strokeWeight(0);
 
     // Move robot to specified position
-    translate(this.x, this.y);
-    scale(this.size);
+    translate(this.x, this.y); // Verplaats het coördinatensysteem naar (this.x, this.y)
+    scale(this.size); // Schaal de grootte van het coördinatensysteem naar this.size
 
     //   Connections
-    fill(this.color[0], this.color[1], this.color[2]);
+    fill(this.color[0], this.color[1], this.color[2]); // Vul met de kleur van de robot
     ellipse(0, 118, 18, 25); // lower and upper body
     ellipse(-30, 76, 16, 16); // arms and upper body
     ellipse(30, 76, 16, 16);
